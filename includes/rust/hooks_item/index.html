@@ -58,6 +58,18 @@
 <li>Returning a CanAcceptResult enum value overrides default behavior</li>
 </ul>
 
+<h2 id="cancombinedroppeditem">CanCombineDroppedItem</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanCombineDroppedItem</span><span class="p">(</span><span class="n">DroppedItem</span> <span class="n">item</span><span class="p">,</span> <span class="n">DroppedItem</span> <span class="n">targetItem</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanCombineDroppedItem works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an item is dropped on another item</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="canmoveitem">CanMoveItem</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanMoveItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">PlayerInventory</span> <span class="n">playerLoot</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">targetContainer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">targetSlot</span><span class="p">)</span>
 <span class="p">{</span>
