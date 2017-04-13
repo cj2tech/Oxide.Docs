@@ -71,7 +71,7 @@
 </ul>
 
 <h2 id="cannpcattack">CanNpcAttack</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcAttack</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcAttack</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcAttack works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -82,15 +82,15 @@
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
-<h2 id="cannpcfear">CanNpcFear</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcFear</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
+<h2 id="cannpceat">CanNpcEat</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcEat</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcFear works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcEat works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when a NPC attempts to run away from another entity</li>
+<li>Called when a NPC attempts to eat another entity</li>
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
@@ -128,6 +128,18 @@
 <ul>
 <li>Called when an airdrop has been called</li>
 <li>No return behavior</li>
+</ul>
+
+<h2 id="oncontainerdropitems">OnContainerDropItems</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnContainerDropItems</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnContainerDropItems works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a container is destroyed and all items are about to be dropped</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onentitydeath">OnEntityDeath</h2>

@@ -358,7 +358,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player is attempting to attack</li>
+<li>Called when a player is attempting to perform a melee attack</li>
 <li>Returning true or falseoverrides default behavior</li>
 </ul>
 
@@ -853,7 +853,7 @@
 </ul>
 
 <h2 id="cannpcattack">CanNpcAttack</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcAttack</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcAttack</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcAttack works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -864,15 +864,15 @@
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
-<h2 id="cannpcfear">CanNpcFear</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcFear</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
+<h2 id="cannpceat">CanNpcEat</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcEat</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcFear works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcEat works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when a NPC attempts to run away from another entity</li>
+<li>Called when a NPC attempts to eat another entity</li>
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
@@ -910,6 +910,18 @@
 <ul>
 <li>Called when an airdrop has been called</li>
 <li>No return behavior</li>
+</ul>
+
+<h2 id="oncontainerdropitems">OnContainerDropItems</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnContainerDropItems</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnContainerDropItems works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a container is destroyed and all items are about to be dropped</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onentitydeath">OnEntityDeath</h2>
@@ -1311,7 +1323,7 @@
 
 <ul>
 <li>Called right after an item has been picked up</li>
-<li>No return behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onitemremovedfromcontainer">OnItemRemovedFromContainer</h2>
@@ -3003,6 +3015,21 @@ version or oxide.version
 <td>deer.skull.mask</td>
 </tr>
 <tr>
+<td>-225234813</td>
+<td>Burned Deer Meat</td>
+<td>deermeat.burned</td>
+</tr>
+<tr>
+<td>-202239044</td>
+<td>Cooked Deer Meat</td>
+<td>deermeat.cooked</td>
+</tr>
+<tr>
+<td>-322501005</td>
+<td>Raw Deer Meat</td>
+<td>deermeat.raw</td>
+</tr>
+<tr>
 <td>-778796102</td>
 <td>Door Closer</td>
 <td>door.closer</td>
@@ -3228,31 +3255,6 @@ version or oxide.version
 <td>hatchet</td>
 </tr>
 <tr>
-<td>-1078788046</td>
-<td>Hazmat Boots</td>
-<td>hazmat.boots</td>
-</tr>
-<tr>
-<td>1057685737</td>
-<td>Hazmat Gloves</td>
-<td>hazmat.gloves</td>
-</tr>
-<tr>
-<td>1079752220</td>
-<td>Hazmat Helmet</td>
-<td>hazmat.helmet</td>
-</tr>
-<tr>
-<td>1133046397</td>
-<td>Hazmat Jacket</td>
-<td>hazmat.jacket</td>
-</tr>
-<tr>
-<td>-1066276787</td>
-<td>Hazmat Pants</td>
-<td>hazmat.pants</td>
-</tr>
-<tr>
 <td>523855532</td>
 <td>Hazmat Suit</td>
 <td>hazmatsuit</td>
@@ -3409,7 +3411,7 @@ version or oxide.version
 </tr>
 <tr>
 <td>-253819519</td>
-<td>Pork</td>
+<td>Raw Pork</td>
 <td>meat.boar</td>
 </tr>
 <tr>
@@ -4173,6 +4175,11 @@ version or oxide.version
 <td>wood</td>
 </tr>
 <tr>
+<td>1501403549</td>
+<td>Wood Armor Helmet</td>
+<td>wood.armor.helmet</td>
+</tr>
+<tr>
 <td>1554697726</td>
 <td>Wood Chestplate</td>
 <td>wood.armor.jacket</td>
@@ -4316,6 +4323,10 @@ version or oxide.version
 <tr>
 <td>10137</td>
 <td>Military Camo AK47</td>
+</tr>
+<tr>
+<td>895307805</td>
+<td>Retro Car Parts AK47</td>
 </tr>
 <tr>
 <td>654502185</td>
@@ -4474,6 +4485,10 @@ version or oxide.version
 <td>Army Bolt Rifle</td>
 </tr>
 <tr>
+<td>897023403</td>
+<td>Deadly Rose BAR</td>
+</tr>
+<tr>
 <td>10117</td>
 <td>Dreamcatcher</td>
 </tr>
@@ -4608,6 +4623,10 @@ version or oxide.version
 <td>Bloody Boots</td>
 </tr>
 <tr>
+<td>899942107</td>
+<td>Caravanner Boots</td>
+</tr>
+<tr>
 <td>838205144</td>
 <td>Combat Boots</td>
 </tr>
@@ -4683,6 +4702,10 @@ version or oxide.version
 <th>Skin name</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>896506958</td>
+<td>Brotherhood Headwrap</td>
+</tr>
 <tr>
 <td>861551572</td>
 <td>Crimson Headwrap</td>
@@ -4772,6 +4795,10 @@ version or oxide.version
 <td>Danger Chair</td>
 </tr>
 <tr>
+<td>897656037</td>
+<td>Muerto Chair</td>
+</tr>
+<tr>
 <td>871271807</td>
 <td>Red Leather Chair</td>
 </tr>
@@ -4804,6 +4831,10 @@ version or oxide.version
 <tr>
 <td>814098474</td>
 <td>Spare Parts</td>
+</tr>
+<tr>
+<td>809816871</td>
+<td>Warboy Helmet</td>
 </tr>
 <tr>
 <td>854460770</td>
@@ -4888,6 +4919,10 @@ version or oxide.version
 <td>Firestarter Custom SMG</td>
 </tr>
 <tr>
+<td>897099822</td>
+<td>Hailstorm SMG</td>
+</tr>
+<tr>
 <td>892212957</td>
 <td>Hunter SMG</td>
 </tr>
@@ -4938,6 +4973,10 @@ version or oxide.version
 <tr>
 <td>856053892</td>
 <td>Banana Eoka</td>
+</tr>
+<tr>
+<td>898387222</td>
+<td>Birch Eoka</td>
 </tr>
 <tr>
 <td>856225258</td>
@@ -5019,6 +5058,10 @@ version or oxide.version
 <th>Skin name</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>892263562</td>
+<td>Ancient Artifact Hatchet</td>
+</tr>
 <tr>
 <td>814630559</td>
 <td>Firefighter Hatchet</td>
@@ -5190,6 +5233,10 @@ version or oxide.version
 <td>Green Hoodie</td>
 </tr>
 <tr>
+<td>895065994</td>
+<td>Leather Strapped Hoodie</td>
+</tr>
+<tr>
 <td>797128321</td>
 <td>Official Vertiigo Hoodie</td>
 </tr>
@@ -5204,6 +5251,10 @@ version or oxide.version
 <tr>
 <td>10129</td>
 <td>Safety Crew</td>
+</tr>
+<tr>
+<td>835836079</td>
+<td>Scudpunk Hoodie</td>
 </tr>
 <tr>
 <td>10086</td>
@@ -5370,6 +5421,10 @@ version or oxide.version
 <tr>
 <td>10124</td>
 <td>Ammo Wooden Box</td>
+</tr>
+<tr>
+<td>892062620</td>
+<td>Cabin Chest</td>
 </tr>
 <tr>
 <td>810383121</td>
@@ -5626,6 +5681,10 @@ version or oxide.version
 <td>Hazardous Grater Chest Plate</td>
 </tr>
 <tr>
+<td>895066686</td>
+<td>Looter&rsquo;s Chain and Plate</td>
+</tr>
+<tr>
 <td>828888000</td>
 <td>Machina Plate</td>
 </tr>
@@ -5649,6 +5708,10 @@ version or oxide.version
 <td>799657859</td>
 <td>Racing Stripes Chest Plate</td>
 </tr>
+<tr>
+<td>900807753</td>
+<td>Salvaged Plating Armor</td>
+</tr>
 </tbody></table>
 
 <h2 id="metal-facemask-metal-facemask">Metal Facemask (metal.facemask)</h2>
@@ -5659,6 +5722,10 @@ version or oxide.version
 <th>Skin name</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>901668040</td>
+<td>Army Armored Facemask</td>
+</tr>
 <tr>
 <td>832021670</td>
 <td>Army Facemask</td>
@@ -5712,6 +5779,14 @@ version or oxide.version
 <td>Industrial Protection Mask</td>
 </tr>
 <tr>
+<td>899001394</td>
+<td>Juggernaut Mask</td>
+</tr>
+<tr>
+<td>895067146</td>
+<td>Looter&rsquo;s Mask</td>
+</tr>
+<tr>
 <td>828888629</td>
 <td>Machina Mask</td>
 </tr>
@@ -5730,6 +5805,10 @@ version or oxide.version
 <tr>
 <td>792827436</td>
 <td>Sacrificial Mask</td>
+</tr>
+<tr>
+<td>896211631</td>
+<td>Scavenger Facemask</td>
 </tr>
 <tr>
 <td>824898622</td>
@@ -5794,6 +5873,10 @@ version or oxide.version
 <tr>
 <td>808554348</td>
 <td>Polymer MP5</td>
+</tr>
+<tr>
+<td>892100306</td>
+<td>Spitfire MP5</td>
 </tr>
 <tr>
 <td>853438134</td>
@@ -6216,6 +6299,10 @@ version or oxide.version
 <td>Metal Roses Short Sword</td>
 </tr>
 <tr>
+<td>893871715</td>
+<td>Roadsign Sword</td>
+</tr>
+<tr>
 <td>825240467</td>
 <td>Wooden Sword</td>
 </tr>
@@ -6270,6 +6357,10 @@ version or oxide.version
 </tr>
 </thead><tbody>
 <tr>
+<td>902487409</td>
+<td>Aircraft Parts SAP</td>
+</tr>
+<tr>
 <td>883156158</td>
 <td>Base Invaders SAP</td>
 </tr>
@@ -6286,6 +6377,10 @@ version or oxide.version
 <td>Desert Hunter</td>
 </tr>
 <tr>
+<td>893118140</td>
+<td>Fire Walk SAP</td>
+</tr>
+<tr>
 <td>805925675</td>
 <td>Golden Leaf SAP</td>
 </tr>
@@ -6296,6 +6391,10 @@ version or oxide.version
 <tr>
 <td>830255284</td>
 <td>LCD Marine Sidearm</td>
+</tr>
+<tr>
+<td>899942580</td>
+<td>Looter&rsquo;s SAP</td>
 </tr>
 <tr>
 <td>853927198</td>
@@ -6352,6 +6451,10 @@ version or oxide.version
 <td>Bandito SAR</td>
 </tr>
 <tr>
+<td>900921542</td>
+<td>Fire Starter SAR</td>
+</tr>
+<tr>
 <td>840023839</td>
 <td>Hazard Semi Auto Rifle</td>
 </tr>
@@ -6396,6 +6499,10 @@ version or oxide.version
 <tr>
 <td>835119969</td>
 <td>Recycled Garage Door</td>
+</tr>
+<tr>
+<td>897274189</td>
+<td>School Bus Door</td>
 </tr>
 <tr>
 <td>883741993</td>
@@ -6836,6 +6943,10 @@ version or oxide.version
 <tr>
 <td>885103417</td>
 <td>Medieval Small Wooden Box</td>
+</tr>
+<tr>
+<td>889212734</td>
+<td>Seed Box</td>
 </tr>
 </tbody></table>
 
