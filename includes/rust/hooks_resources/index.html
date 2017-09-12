@@ -70,6 +70,18 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="ondispenserbonus">OnDispenserBonus</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnDispenserBonus</span><span class="p">(</span><span class="n">ResourceDispenser</span> <span class="n">dispenser</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnDispenserBonus works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called before the player is given a bonus item for gathering</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="ondispensergather">OnDispenserGather</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnDispenserGather</span><span class="p">(</span><span class="n">ResourceDispenser</span> <span class="n">dispenser</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
