@@ -67,6 +67,7 @@
 <ul>
 <li>Called when a plugin is being initialized</li>
 <li>Other plugins may or may not be present, dependant on load order</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="loaded">Loaded</h2>
@@ -79,6 +80,7 @@
 <ul>
 <li>Called when a plugin has finished loading</li>
 <li>Other plugins may or may not be present, dependant on load order</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="unload">Unload</h2>
@@ -90,6 +92,7 @@
 
 <ul>
 <li>Called when a plugin is being unloaded</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="loaddefaultconfig">LoadDefaultConfig</h2>
@@ -102,6 +105,7 @@
 <ul>
 <li>Called when the config for a plugin should be initialized</li>
 <li>Only called if the config file does not already exist</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="onframe">OnFrame</h2>
@@ -112,7 +116,8 @@
 </code></pre>
 
 <ul>
-<li>Placeholder</li>
+<li>Called each frame</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="onpluginloaded">OnPluginLoaded</h2>
@@ -124,6 +129,7 @@
 
 <ul>
 <li>Called when a plugin has been loaded</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="onpluginunloaded">OnPluginUnloaded</h2>
@@ -135,6 +141,7 @@
 
 <ul>
 <li>Called when a plugin has been unloaded</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="onserverinitialized">OnServerInitialized</h2>
@@ -145,64 +152,20 @@
 </code></pre>
 
 <ul>
-<li>No return behavior</li>
 <li>Called after the server startup has been completed and is awaiting connections</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="onserversave">OnServerSave</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="n">OnServerSave</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnServerSave</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnServerSave works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>No return behavior</li>
 <li>Called before the server saves and shuts down</li>
-</ul>
-
-<h2 id="onuserpermissiongranted">OnUserPermissionGranted</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserPermissionGranted</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">perm</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{id}' granted permission: {perm}"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when a permission has been granted to a user</li>
-</ul>
-
-<h2 id="onuserpermissionrevoked">OnUserPermissionRevoked</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserPermissionRevoked</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">perm</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{id}' revoked permission: {perm}"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when a permission has been revoked from a user</li>
-</ul>
-
-<h2 id="onusergroupadded">OnUserGroupAdded</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserGroupAdded</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{id}' added to group: {name}"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when a user has been added to a group</li>
-</ul>
-
-<h2 id="onusergroupremoved">OnUserGroupRemoved</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserGroupRemoved</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{id}' removed from group: {name}"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when a user has been removed from a group</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="ongrouppermissiongranted">OnGroupPermissionGranted</h2>
@@ -214,6 +177,7 @@
 
 <ul>
 <li>Called when a permission has been granted to a group</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="ongrouppermissionrevoked">OnGroupPermissionRevoked</h2>
@@ -225,6 +189,91 @@
 
 <ul>
 <li>Called when a permission has been revoked from a group</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onuserpermissiongranted">OnUserPermissionGranted</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserPermissionGranted</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">perm</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{id}' granted permission: {perm}"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a permission has been granted to a player</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onuserpermissionrevoked">OnUserPermissionRevoked</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserPermissionRevoked</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">perm</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{id}' revoked permission: {perm}"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a permission has been revoked from a player</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onusergroupadded">OnUserGroupAdded</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserGroupAdded</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{id}' added to group: {name}"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player has been added to a group</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onusergroupremoved">OnUserGroupRemoved</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserGroupRemoved</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{id}' removed from group: {name}"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player has been removed from a group</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onuserkicked">OnUserKicked</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserKicked</span><span class="p">(</span><span class="n">IPlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User {player.Name} ({player.Id}) was kicked"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player has been kicked from the server</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onuserbanned">OnUserBanned</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserBanned</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">address</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User {name} ({id}) was banned: {reason}"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player has been banned from the server</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onuserunbanned">OnUserUnbanned</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserUnbanned</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">ip</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Player {name} ({id}) was unbanned"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player has been unbanned from the server</li>
+<li>No return behavior</li>
 </ul>
 
       </div>
