@@ -47,7 +47,7 @@
         <h1 id="weapon-hooks">Weapon Hooks</h1>
 
 <h2 id="oncreateworldprojectile">OnCreateWorldProjectile</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCreateWorldProjectile</span><span class="p">(</span><span class="n">HitInfo</span> <span class="n">info</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnCreateWorldProjectile</span><span class="p">(</span><span class="n">HitInfo</span> <span class="n">info</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCreateWorldProjectile works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -92,6 +92,30 @@
 <ul>
 <li>Called when the player throws a melee item (axe, rock, &hellip;)</li>
 <li>No return behavior</li>
+</ul>
+
+<h2 id="onreloadmagazine">OnReloadMagazine</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnReloadMagazine</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseProjectile</span> <span class="n">projectile</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnReloadMagazine works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player reloads a magazine</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onreloadweapon">OnReloadWeapon</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnReloadWeapon</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseProjectile</span> <span class="n">projectile</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnReloadWeapon works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player reloads a weapon</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onrocketlaunched">OnRocketLaunched</h2>
