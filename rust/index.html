@@ -1166,6 +1166,18 @@
 <li>Returning true overrides default behavior</li>
 </ul>
 
+<h2 id="onliftuse">OnLiftUse</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnLiftUse</span><span class="p">(</span><span class="n">Lift</span> <span class="n">lift</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnLiftUse works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player calls a lift</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="onnpcplayertarget">OnNpcPlayerTarget</h2>
 <pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnNpcPlayerTarget</span><span class="p">(</span><span class="n">NPCPlayerApex</span> <span class="n">npcPlayer</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
 <span class="p">{</span>
