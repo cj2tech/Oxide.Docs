@@ -1693,8 +1693,20 @@
 
           <h1 id="structure-hooks">Structure Hooks</h1>
 
+<h2 id="canaffordupgrade">CanAffordUpgrade</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanAffordUpgrade</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BuildingBlock</span> <span class="n">block</span><span class="p">,</span> <span class="n">BuildingGrade</span><span class="p">.</span><span class="n">Enum</span> <span class="n">grade</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanAffordUpgrade works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the resources for an upgrade are checked</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
 <h2 id="canassignbed">CanAssignBed</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanAssignBed</span><span class="p">(</span><span class="n">SleepingBag</span> <span class="n">bag</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">targetPlayerId</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanAssignBed</span><span class="p">(</span><span class="n">SleepingBag</span> <span class="n">bag</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">targetPlayerId</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanAssignBed works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1706,7 +1718,7 @@
 </ul>
 
 <h2 id="canbuild">CanBuild</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBuild</span><span class="p">(</span><span class="n">Planner</span> <span class="n">plan</span><span class="p">,</span> <span class="n">Construction</span> <span class="n">prefab</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanBuild</span><span class="p">(</span><span class="n">Planner</span> <span class="n">planner</span><span class="p">,</span> <span class="n">Construction</span> <span class="n">prefab</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">position</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanBuild works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1718,7 +1730,7 @@
 </ul>
 
 <h2 id="canchangecode">CanChangeCode</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanChangeCode</span><span class="p">(</span><span class="n">CodeLock</span> <span class="n">codeLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">newCode</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isGuestCode</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanChangeCode</span><span class="p">(</span><span class="n">CodeLock</span> <span class="n">codeLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">newCode</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isGuestCode</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanChangeCode works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1729,8 +1741,32 @@
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
+<h2 id="canchangegrade">CanChangeGrade</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanChangeGrade</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BuildingBlock</span> <span class="n">block</span><span class="p">,</span> <span class="n">BuildingGrade</span><span class="p">.</span><span class="n">Enum</span> <span class="n">grade</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanChangeGrade works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player tries to change a building grade</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="candemolish">CanDemolish</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanDemolish</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BuildingBlock</span> <span class="n">block</span><span class="p">,</span> <span class="n">BuildingGrade</span><span class="p">.</span><span class="n">Enum</span> <span class="n">grade</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanDemolish works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player tries to demolish a building block</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
 <h2 id="canhidestash">CanHideStash</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanHideStash</span><span class="p">(</span><span class="n">StashContainer</span> <span class="n">stash</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanHideStash</span><span class="p">(</span><span class="n">StashContainer</span> <span class="n">stash</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanHideStash works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1742,7 +1778,7 @@
 </ul>
 
 <h2 id="canlock">CanLock</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanLock</span><span class="p">(</span><span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanLock</span><span class="p">(</span><span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1753,8 +1789,20 @@
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
+<h2 id="canpickuplock">CanPickupLock</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanPickupLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="k">lock</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanPickupLock works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player attempts to pickup a lock</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
 <h2 id="canseestash">CanSeeStash</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanSeeStash</span><span class="p">(</span><span class="n">StashContainer</span> <span class="n">stash</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanSeeStash</span><span class="p">(</span><span class="n">StashContainer</span> <span class="n">stash</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanSeeStash works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1766,7 +1814,7 @@
 </ul>
 
 <h2 id="cansetbedpublic">CanSetBedPublic</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanSetBedPublic</span><span class="p">(</span><span class="n">SleepingBag</span> <span class="n">bed</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanSetBedPublic</span><span class="p">(</span><span class="n">SleepingBag</span> <span class="n">bed</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanSetBedPublic works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1778,7 +1826,7 @@
 </ul>
 
 <h2 id="canunlock">CanUnlock</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUnlock</span><span class="p">(</span><span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanUnlock</span><span class="p">(</span><span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUnlock works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1790,7 +1838,7 @@
 </ul>
 
 <h2 id="canuselockedentity">CanUseLockedEntity</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseLockedEntity</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanUseLockedEntity</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseLockedEntity works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1802,7 +1850,7 @@
 </ul>
 
 <h2 id="oncodeentered">OnCodeEntered</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCodeEntered</span><span class="p">(</span><span class="n">CodeLock</span> <span class="n">codeLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">code</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnCodeEntered</span><span class="p">(</span><span class="n">CodeLock</span> <span class="n">codeLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">code</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCodeEntered works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1814,7 +1862,7 @@
 </ul>
 
 <h2 id="oncupboardauthorize">OnCupboardAuthorize</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCupboardAuthorize</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnCupboardAuthorize</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCupboardAuthorize works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1826,7 +1874,7 @@
 </ul>
 
 <h2 id="oncupboardclearlist">OnCupboardClearList</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCupboardClearList</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnCupboardClearList</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCupboardClearList works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1838,7 +1886,7 @@
 </ul>
 
 <h2 id="oncupboarddeauthorize">OnCupboardDeauthorize</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCupboardDeauthorize</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnCupboardDeauthorize</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCupboardDeauthorize works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1898,7 +1946,7 @@
 </ul>
 
 <h2 id="onstructuredemolish">OnStructureDemolish</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnStructureDemolish</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnStructureDemolish</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnStructureDemolish works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1934,7 +1982,7 @@
 </ul>
 
 <h2 id="onstructureupgrade">OnStructureUpgrade</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnStructureUpgrade</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BuildingGrade</span><span class="p">.</span><span class="n">Enum</span> <span class="n">grade</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnStructureUpgrade</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BuildingGrade</span><span class="p">.</span><span class="n">Enum</span> <span class="n">grade</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnStructureUpgrade works!"</span><span class="p">);</span>
 <span class="p">}</span>
