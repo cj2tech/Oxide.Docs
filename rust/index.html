@@ -1205,7 +1205,7 @@
           <h1 id="item-hooks">Item Hooks</h1>
 
 <h2 id="canacceptitem">CanAcceptItem</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanAcceptItem</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">enum</span> <span class="nf">CanAcceptItem</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanAcceptItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1217,7 +1217,7 @@
 </ul>
 
 <h2 id="cancombinedroppeditem">CanCombineDroppedItem</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanCombineDroppedItem</span><span class="p">(</span><span class="n">DroppedItem</span> <span class="n">item</span><span class="p">,</span> <span class="n">DroppedItem</span> <span class="n">targetItem</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanCombineDroppedItem</span><span class="p">(</span><span class="n">DroppedItem</span> <span class="n">item</span><span class="p">,</span> <span class="n">DroppedItem</span> <span class="n">targetItem</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanCombineDroppedItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1225,11 +1225,11 @@
 
 <ul>
 <li>Called when an item is dropped on another item</li>
-<li>Returning a non-null value overrides default behavior</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="canmoveitem">CanMoveItem</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanMoveItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">PlayerInventory</span> <span class="n">playerLoot</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">targetContainer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">targetSlot</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanMoveItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">PlayerInventory</span> <span class="n">playerLoot</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">targetContainer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">targetSlot</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanMoveItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1237,11 +1237,11 @@
 
 <ul>
 <li>Called when moving an item from one inventory slot to another</li>
-<li>Returning a non-null value overrides default behavior</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="canstackitem">CanStackItem</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanStackItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">Item</span> <span class="n">targetItem</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanStackItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">Item</span> <span class="n">targetItem</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanStackItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1264,8 +1264,20 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="oncontainerdropitems">OnContainerDropItems</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnContainerDropItems</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnContainerDropItems works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an item is dropped from a container</li>
+<li>No return behavior</li>
+</ul>
+
 <h2 id="onfindburnable">OnFindBurnable</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnFindBurnable</span><span class="p">(</span><span class="n">BaseOven</span> <span class="n">oven</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="n">Item</span> <span class="nf">OnFindBurnable</span><span class="p">(</span><span class="n">BaseOven</span> <span class="n">oven</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnFindBurnable works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1276,20 +1288,8 @@
 <li>Returning an item overrides default behavior</li>
 </ul>
 
-<h2 id="onhealingitemuse">OnHealingItemUse</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnHealingItemUse</span><span class="p">(</span><span class="n">HeldEntity</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">target</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnHealingItemUse works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called right before a Syringe or Medkit item is used</li>
-<li>Returning a non-null value overrides default behavior</li>
-</ul>
-
 <h2 id="onitemaction">OnItemAction</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemAction</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="kt">string</span> <span class="n">action</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnItemAction</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="kt">string</span> <span class="n">action</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemAction works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1314,7 +1314,7 @@
 </ul>
 
 <h2 id="onitemcraft">OnItemCraft</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemCraft</span><span class="p">(</span><span class="n">ItemCraftTask</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnItemCraft</span><span class="p">(</span><span class="n">ItemCraftTask</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemCraft works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1322,7 +1322,7 @@
 
 <ul>
 <li>Called right after an item is added to the crafting queue</li>
-<li>Returning true or false overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onitemcraftcancelled">OnItemCraftCancelled</h2>
@@ -1374,7 +1374,7 @@
 </ul>
 
 <h2 id="onitempickup">OnItemPickup</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemPickup</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnItemPickup</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemPickup works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1411,7 +1411,7 @@
 </ul>
 
 <h2 id="onitemresearch">OnItemResearch</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemResearch</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnItemResearch</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemResearch works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1423,7 +1423,7 @@
 </ul>
 
 <h2 id="onitemresearchend">OnItemResearchEnd</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemResearchEnd</span><span class="p">(</span><span class="n">ResearchTable</span> <span class="n">table</span><span class="p">,</span> <span class="kt">float</span> <span class="n">chance</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">float</span> <span class="nf">OnItemResearchEnd</span><span class="p">(</span><span class="n">ResearchTable</span> <span class="n">table</span><span class="p">,</span> <span class="kt">float</span> <span class="n">chance</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemResearchEnd works!"</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">chance</span><span class="p">;</span>
@@ -1448,7 +1448,7 @@
 </ul>
 
 <h2 id="onitemsplit">OnItemSplit</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemSplit</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="n">Item</span> <span class="nf">OnItemSplit</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemSplit works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1495,8 +1495,20 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="onmaxstackable">OnMaxStackable</h2>
+<pre class="highlight csharp"><code><span class="kt">int</span> <span class="nf">OnMaxStackable</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">Item</span> <span class="n">targetItem</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnMaxStackable works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an items max stackable is calculated</li>
+<li>Returning a numeric value (int) overrides the default value</li>
+</ul>
+
 <h2 id="ontraparm">OnTrapArm</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTrapArm</span><span class="p">(</span><span class="n">BearTrap</span> <span class="n">trap</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTrapArm</span><span class="p">(</span><span class="n">BearTrap</span> <span class="n">trap</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTrapArm works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1508,7 +1520,7 @@
 </ul>
 
 <h2 id="ontrapdisarm">OnTrapDisarm</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTrapDisarm</span><span class="p">(</span><span class="n">Landmine</span> <span class="n">trap</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTrapDisarm</span><span class="p">(</span><span class="n">Landmine</span> <span class="n">trap</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTrapDisarm works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1532,7 +1544,7 @@
 </ul>
 
 <h2 id="ontraptrigger">OnTrapTrigger</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTrapTrigger</span><span class="p">(</span><span class="n">BaseTrap</span> <span class="n">trap</span><span class="p">,</span> <span class="n">GameObject</span> <span class="n">go</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTrapTrigger</span><span class="p">(</span><span class="n">BaseTrap</span> <span class="n">trap</span><span class="p">,</span> <span class="n">GameObject</span> <span class="n">go</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTrapTrigger works!"</span><span class="p">);</span>
 <span class="p">}</span>
