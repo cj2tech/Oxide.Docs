@@ -58,6 +58,18 @@
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
+<h2 id="canhelicopterstrafe">CanHelicopterStrafe</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanHelicopterStrafe</span><span class="p">(</span><span class="n">PatrolHelicopterAI</span> <span class="n">heli</span><span class="p">)</span> <span class="n">hook</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanHelicopterStrafe works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a helicopter attempts to strafe</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
 <h2 id="canhelicopterstrafetarget">CanHelicopterStrafeTarget</h2>
 <pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanHelicopterStrafeTarget</span><span class="p">(</span><span class="n">PatrolHelicopterAI</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
@@ -66,7 +78,31 @@
 </code></pre>
 
 <ul>
-<li>Called when a helicopter targets a player to attack while strafing</li>
+<li>Called when a helicopter attempts to target a player to attack while strafing</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="canhelicoptertarget">CanHelicopterTarget</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanHelicopterTarget</span><span class="p">(</span><span class="n">PatrolHelicopterAI</span> <span class="n">heli</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span> <span class="n">hook</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanHelicopterTarget works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a helicopter attempts to target a player to attack</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="canhelicopterusenapalm">CanHelicopterUseNapalm</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanHelicopterUseNapalm</span><span class="p">(</span><span class="n">PatrolHelicopterAI</span> <span class="n">heli</span><span class="p">)</span> <span class="n">hook</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanHelicopterUseNapalm works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a helicopter attempts to use napalm</li>
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
@@ -287,6 +323,30 @@
 <ul>
 <li>Called when a helicopter attempts to target an entity</li>
 <li>Returning true overrides default behavior</li>
+</ul>
+
+<h2 id="onnpcplayertarget">OnNpcPlayerTarget</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnNpcPlayerTarget</span><span class="p">(</span><span class="n">NPCPlayerApex</span> <span class="n">npcPlayer</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnNpcPlayerTarget works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an NPC player targets another entity</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onnpctarget">OnNpcTarget</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnNpcTarget</span><span class="p">(</span><span class="n">BaseNpc</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnOvenToggle works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an NPC targets another entity</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onoventoggle">OnOvenToggle</h2>
