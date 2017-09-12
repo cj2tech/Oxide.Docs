@@ -264,7 +264,7 @@
           <h1 id="server-hooks">Server Hooks</h1>
 
 <h2 id="onmessageplayer">OnMessagePlayer</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnMessagePlayer</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnMessagePlayer</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnMessagePlayer works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -287,8 +287,20 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="onrconcommand">OnRconCommand</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnRconCommand</span><span class="p">(</span><span class="kt">string</span> <span class="n">ip</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span> <span class="n">args</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnRconCommand works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an RCON command is run</li>
+<li>No return behavior</li>
+</ul>
+
 <h2 id="onrconconnection">OnRconConnection</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnRconConnection</span><span class="p">(</span><span class="n">IPEndPoint</span> <span class="n">ip</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnRconConnection</span><span class="p">(</span><span class="n">IPEndPoint</span> <span class="n">ip</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnRconConnection works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -300,7 +312,7 @@
 </ul>
 
 <h2 id="onsaveload">OnSaveLoad</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnSaveLoad</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">BaseEntity</span><span class="p">,</span> <span class="n">Entity</span><span class="p">&gt;</span> <span class="n">entities</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnSaveLoad</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">BaseEntity</span><span class="p">,</span> <span class="n">Entity</span><span class="p">&gt;</span> <span class="n">entities</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnSaveLoad works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -308,11 +320,11 @@
 
 <ul>
 <li>Called when a savefile is loaded</li>
-<li>Returning true or false overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onservercommand">OnServerCommand</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnServerCommand</span><span class="p">(</span><span class="n">ConsoleSystem</span><span class="p">.</span><span class="n">Arg</span> <span class="n">arg</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnServerCommand</span><span class="p">(</span><span class="n">ConsoleSystem</span><span class="p">.</span><span class="n">Arg</span> <span class="n">arg</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnServerCommand works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -320,11 +332,11 @@
 
 <ul>
 <li>Useful for intercepting commands before they get to their intended target</li>
-<li>Return true to override the command handling system</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onservermessage">OnServerMessage</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnServerMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">color</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">id</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnServerMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">color</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">id</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnServerMessage works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -332,7 +344,7 @@
 
 <ul>
 <li>Useful for intercepting server messages before they get to their intended target</li>
-<li>Return true to override the default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="ontick">OnTick</h2>
