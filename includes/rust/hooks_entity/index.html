@@ -46,8 +46,20 @@
       <div class="content">
         <h1 id="entity-hooks">Entity Hooks</h1>
 
+<h2 id="canbradleyapctarget">CanBradleyApcTarget</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanBradleyApcTarget</span><span class="p">(</span><span class="n">BradleyAPC</span> <span class="n">apc</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanBradleyApcTarget works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an APC targets an entity</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
 <h2 id="canhelicopterstrafetarget">CanHelicopterStrafeTarget</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanHelicopterStrafeTarget</span><span class="p">(</span><span class="n">PatrolHelicopterAI</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">target</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanHelicopterStrafeTarget</span><span class="p">(</span><span class="n">PatrolHelicopterAI</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanHelicopterStrafeTarget works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -59,7 +71,7 @@
 </ul>
 
 <h2 id="cannetworkto">CanNetworkTo</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNetworkTo</span><span class="p">(</span><span class="n">BaseNetworkable</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">target</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanNetworkTo</span><span class="p">(</span><span class="n">BaseNetworkable</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNetworkTo works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -71,7 +83,7 @@
 </ul>
 
 <h2 id="cannpcattack">CanNpcAttack</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcAttack</span><span class="p">(</span><span class="n">BaseNpc</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">target</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanNpcAttack</span><span class="p">(</span><span class="n">BaseNpc</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcAttack works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -83,7 +95,7 @@
 </ul>
 
 <h2 id="cannpceat">CanNpcEat</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcEat</span><span class="p">(</span><span class="n">BaseNpc</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanNpcEat</span><span class="p">(</span><span class="n">BaseNpc</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcEat works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -95,7 +107,7 @@
 </ul>
 
 <h2 id="canpickupentity">CanPickupEntity</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanPickupEntity</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanPickupEntity</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanPickupEntity works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -107,7 +119,7 @@
 </ul>
 
 <h2 id="canrecycle">CanRecycle</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanRecycle</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanRecycle</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanRecycle works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -130,8 +142,44 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="onbradleyapcinitialize">OnBradleyApcInitialize</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnBradleyApcInitialize</span><span class="p">(</span><span class="n">BradleyAPC</span> <span class="n">apc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnBradleyApcInitialize works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an APC initializes</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onbradleyapchunt">OnBradleyApcHunt</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnBradleyApcHunt</span><span class="p">(</span><span class="n">BradleyAPC</span> <span class="n">apc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnBradleyApcHunt works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an APC starts hunting</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onbradleyapcpatrol">OnBradleyApcPatrol</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnBradleyApcPatrol</span><span class="p">(</span><span class="n">BradleyAPC</span> <span class="n">apc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnBradleyApcPatrol works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an APC is starts patrolling</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="oncontainerdropitems">OnContainerDropItems</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnContainerDropItems</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnContainerDropItems</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnContainerDropItems works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -168,7 +216,7 @@
 </ul>
 
 <h2 id="onentitygroundmissing">OnEntityGroundMissing</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnEntityGroundMissing</span><span class="p">(</span><span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnEntityGroundMissing</span><span class="p">(</span><span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnEntityGroundMissing works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -216,7 +264,7 @@
 </ul>
 
 <h2 id="onentitytakedamage">OnEntityTakeDamage</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnEntityTakeDamage</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">HitInfo</span> <span class="n">info</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnEntityTakeDamage</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">HitInfo</span> <span class="n">info</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnEntityTakeDamage works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -230,7 +278,7 @@
 </ul>
 
 <h2 id="onhelicoptertarget">OnHelicopterTarget</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnHelicopterTarget</span><span class="p">(</span><span class="n">HelicopterTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnHelicopterTarget</span><span class="p">(</span><span class="n">HelicopterTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnHelicopterTarget works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -242,7 +290,7 @@
 </ul>
 
 <h2 id="onoventoggle">OnOvenToggle</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnOvenToggle</span><span class="p">(</span><span class="n">BaseOven</span> <span class="n">oven</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnOvenToggle</span><span class="p">(</span><span class="n">BaseOven</span> <span class="n">oven</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnOvenToggle works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -254,7 +302,7 @@
 </ul>
 
 <h2 id="onrecycleitem">OnRecycleItem</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnRecycleItem</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnRecycleItem</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnRecycleItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -266,7 +314,7 @@
 </ul>
 
 <h2 id="onrecyclertoggle">OnRecyclerToggle</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnRecyclerToggle</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnRecyclerToggle</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnRecyclerToggle works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -290,7 +338,7 @@
 </ul>
 
 <h2 id="onturretauthorize">OnTurretAuthorize</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretAuthorize</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTurretAuthorize</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretAuthorize works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -302,7 +350,7 @@
 </ul>
 
 <h2 id="onturretdeauthorize">OnTurretDeauthorize</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretShutdown</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTurretShutdown</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretDeauthorize works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -314,7 +362,7 @@
 </ul>
 
 <h2 id="onturretshutdown">OnTurretShutdown</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretShutdown</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTurretShutdown</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretShutdown works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -326,7 +374,7 @@
 </ul>
 
 <h2 id="onturretstartup">OnTurretStartup</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretStartup</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTurretStartup</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretStartup works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -338,7 +386,7 @@
 </ul>
 
 <h2 id="onturrettarget">OnTurretTarget</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretTarget</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTurretTarget</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretTarget works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -350,7 +398,7 @@
 </ul>
 
 <h2 id="onturrettoggle">OnTurretToggle</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretToggle</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTurretToggle</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretToggle works!"</span><span class="p">);</span>
 <span class="p">}</span>
