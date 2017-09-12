@@ -362,7 +362,7 @@
           <h1 id="player-hooks">Player Hooks</h1>
 
 <h2 id="canattack">CanAttack</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanAttack</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanAttack</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanAttack works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -370,23 +370,23 @@
 
 <ul>
 <li>Called when a player is attempting to perform a melee attack</li>
-<li>Returning true or falseoverrides default behavior</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="canbetargeted-autoturret">CanBeTargeted (autoturret)</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBeTargeted</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">player</span><span class="p">,</span> <span class="n">MonoBehaviour</span> <span class="n">turret</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanBeTargeted</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">player</span><span class="p">,</span> <span class="n">MonoBehaviour</span> <span class="n">behaviour</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanBeTargeted works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when an autoturret, flameturret or helicopterturret is attempting to target the player</li>
-<li>Returning true overrides default behavior</li>
+<li>Called when an autoturret, flame turret, shotgun trap, or helicopter turret is attempting to target the player</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="canbewounded">CanBeWounded</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBeWounded</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">HitInfo</span> <span class="n">info</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanBeWounded</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">HitInfo</span> <span class="n">info</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanBeWounded works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -398,7 +398,7 @@
 </ul>
 
 <h2 id="canbypassqueue">CanBypassQueue</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBypassQueue</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanBypassQueue</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanBypassQueue works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -410,7 +410,7 @@
 </ul>
 
 <h2 id="cancraft">CanCraft</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanCraft</span><span class="p">(</span><span class="n">ItemCrafter</span> <span class="n">itemCrafter</span><span class="p">,</span> <span class="n">ItemBlueprint</span> <span class="n">bp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanCraft</span><span class="p">(</span><span class="n">ItemCrafter</span> <span class="n">itemCrafter</span><span class="p">,</span> <span class="n">ItemBlueprint</span> <span class="n">bp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanCraft works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -422,7 +422,7 @@
 </ul>
 
 <h2 id="canclientlogin">CanClientLogin</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanClientLogin</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanClientLogin</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanClientLogin works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -435,7 +435,7 @@
 </ul>
 
 <h2 id="canequipitem">CanEquipItem</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanEquipItem</span><span class="p">(</span><span class="n">PlayerInventory</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanEquipItem</span><span class="p">(</span><span class="n">PlayerInventory</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanEquipItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -447,7 +447,7 @@
 </ul>
 
 <h2 id="canlootplayer">CanLootPlayer</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanLootPlayer</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">target</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">looter</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanLootPlayer</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">target</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">looter</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanLootPlayer works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -455,11 +455,11 @@
 
 <ul>
 <li>Called when the player attempts to loot another player</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="canwearitem">CanWearItem</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanWearItem</span><span class="p">(</span><span class="n">PlayerInventory</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanWearItem</span><span class="p">(</span><span class="n">PlayerInventory</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanWearItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -556,19 +556,19 @@
 </ul>
 
 <h2 id="onplayerbanned">OnPlayerBanned</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerBanned</span><span class="p">(</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerBanned</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">address</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerBanned works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when a player is banned</li>
+<li>Called when a player is banned (Facepunch, EAC, server ban, etc.)</li>
 <li>No return behavior</li>
 </ul>
 
 <h2 id="onplayerchat">OnPlayerChat</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">ConsoleSystem</span><span class="p">.</span><span class="n">Arg</span> <span class="n">arg</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">ConsoleSystem</span><span class="p">.</span><span class="n">Arg</span> <span class="n">arg</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerChat works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -593,7 +593,7 @@
 </ul>
 
 <h2 id="onplayerdie">OnPlayerDie</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerDie</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">HitInfo</span> <span class="n">info</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerDie</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">HitInfo</span> <span class="n">info</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerDie works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -618,7 +618,7 @@
 </ul>
 
 <h2 id="onplayerhealthchange">OnPlayerHealthChange</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerHealthChange</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">float</span> <span class="n">oldValue</span><span class="p">,</span> <span class="kt">float</span> <span class="n">newValue</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerHealthChange</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">float</span> <span class="n">oldValue</span><span class="p">,</span> <span class="kt">float</span> <span class="n">newValue</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerHealthChange works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -654,7 +654,7 @@
 </ul>
 
 <h2 id="onplayerland">OnPlayerLand</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerLand</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">float</span> <span class="n">num</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerLand</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">float</span> <span class="n">num</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerLand works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -690,7 +690,7 @@
 </ul>
 
 <h2 id="onplayerrecover">OnPlayerRecover</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerRecover</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerRecover</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerRecover works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -702,7 +702,7 @@
 </ul>
 
 <h2 id="onplayerrespawn">OnPlayerRespawn</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerRespawn</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerRespawn</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerRespawn works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -710,7 +710,7 @@
 
 <ul>
 <li>Called when the player is attempting to respawn</li>
-<li>Returning a non-null value overrides the default behavior</li>
+<li>Returning a BasePlayer.SpawnPoint (takes a position and rotation) overrides the respawn location</li>
 </ul>
 
 <h2 id="onplayerrespawned">OnPlayerRespawned</h2>
@@ -728,7 +728,7 @@
 </ul>
 
 <h2 id="onplayersleep">OnPlayerSleep</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSleep</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerSleep</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSleep works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -752,7 +752,7 @@
 </ul>
 
 <h2 id="onplayerspawn">OnPlayerSpawn</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSpawn works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -764,7 +764,7 @@
 </ul>
 
 <h2 id="onplayerspectate">OnPlayerSpectate</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpectate</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">spectateFilter</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerSpectate</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">spectateFilter</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSpectate works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -776,7 +776,7 @@
 </ul>
 
 <h2 id="onplayerspectateend">OnPlayerSpectateEnd</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpectateEnd</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">spectateFilter</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerSpectateEnd</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">spectateFilter</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSpectateEnd works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -788,7 +788,7 @@
 </ul>
 
 <h2 id="onplayertick">OnPlayerTick</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerTick</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">PlayerTick</span> <span class="n">msg</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">wasPlayerStalled</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerTick</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">PlayerTick</span> <span class="n">msg</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">wasPlayerStalled</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerTick works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -798,8 +798,20 @@
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
+<h2 id="onplayerviolation">OnPlayerViolation</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerViolation</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">AntiHackType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">float</span> <span class="n">amount</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerViolation works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player triggers an anti-hack violation</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="onplayerwound">OnPlayerWound</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerWound</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerWound</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerWound works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -811,7 +823,7 @@
 </ul>
 
 <h2 id="onrunplayermetabolism">OnRunPlayerMetabolism</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnRunPlayerMetabolism</span><span class="p">(</span><span class="n">PlayerMetabolism</span> <span class="n">metabolism</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnRunPlayerMetabolism</span><span class="p">(</span><span class="n">PlayerMetabolism</span> <span class="n">metabolism</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnRunPlayerMetabolism works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -826,7 +838,7 @@
 </ul>
 
 <h2 id="onuserapprove">OnUserApprove</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserApprove</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnUserApprove</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnUserApprove works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -834,7 +846,7 @@
 
 <ul>
 <li>Used by RustCore and abstracted into CanClientLogin</li>
-<li>Returning true overrides default behavior, plugin should call Reject if it does this</li>
+<li>Returning a non-null value overrides default behavior, plugin should call Reject if it does this</li>
 </ul>
 
           <h1 id="entity-hooks">Entity Hooks</h1>
