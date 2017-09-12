@@ -310,6 +310,95 @@
 <li>No return behavior</li>
 </ul>
 
+          <h1 id="server-hooks">Server Hooks</h1>
+
+<h2 id="onservercommand">OnServerCommand</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnServerCommand</span><span class="p">(</span><span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnServerCommand works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Useful for intercepting commands before they get to their intended target</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+          <h1 id="player-hooks">Player Hooks</h1>
+
+<h2 id="canclientlogin">CanClientLogin</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanClientLogin</span><span class="p">(</span><span class="n">BoltConnection</span> <span class="n">connection</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanClientLogin works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player is attempting to login</li>
+<li>Returning a string will use the string as the error message</li>
+<li>Returning true allows the connection, returning nothing will by default allow the connection, returning anything else will reject it with an error message</li>
+</ul>
+
+<h2 id="onplayerchat">OnPlayerChat</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">ChatEvent</span> <span class="n">evt</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerChat works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player sends chat to the server</li>
+<li>Returning a non-null value overrides default behavior of chat, not commands</li>
+</ul>
+
+<h2 id="onplayerconnected">OnPlayerConnected</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">BoltEntity</span> <span class="n">entity</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerConnected works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called after the player has connected to the server</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onplayerdisconnected">OnPlayerDisconnected</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerDisconnected</span><span class="p">(</span><span class="n">BoltEntity</span> <span class="n">entity</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerDisconnected works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called after the player has disconnected from the server</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onplayerspawn">OnPlayerSpawn</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">BoltEntity</span> <span class="n">entity</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSpawn works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player spawns for the first time on the server</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onuserapprove">OnUserApprove</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnUserApprove</span><span class="p">(</span><span class="n">BoltConnection</span> <span class="n">connection</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnUserApprove works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player has been approved to connect to the server</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
           <h1 id="timers-basic">Timers (Basic)</h1>
 
 <p>Timers are great for delaying code, allowing it to be run later.</p>
@@ -575,6 +664,28 @@
 </code></pre>
 
 <p>Calling a plugin&rsquo;s method allows you to access results from another plugin.</p>
+
+          <h1 id="item-list">Item List</h1>
+
+<table><thead>
+<tr>
+<th>Item Id</th>
+<th>Item Name</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>16</td>
+<td>Initial Axe</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Stick</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Stone</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
