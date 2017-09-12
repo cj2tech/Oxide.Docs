@@ -1250,6 +1250,18 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="onshopcompletetrade">OnShopCompleteTrade</h2>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnShopCompleteTrade</span><span class="p">(</span><span class="n">ShopFront</span> <span class="n">shop</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">customer</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnShopCompleteTrade works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a shopfront trade is complete</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="onturretauthorize">OnTurretAuthorize</h2>
 <pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnTurretAuthorize</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
