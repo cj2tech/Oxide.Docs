@@ -54,7 +54,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player is attempting to perform a melee attack</li>
+<li>Called when the player is attempting to perform a melee attack</li>
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
@@ -90,7 +90,7 @@
 </code></pre>
 
 <ul>
-<li>Called before a player is added to the connection queue</li>
+<li>Called before the player is added to the connection queue</li>
 <li>Returning true will bypass the queue, returning nothing will by default queue the player</li>
 </ul>
 
@@ -102,7 +102,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player attempts to craft an item</li>
+<li>Called when the player attempts to craft an item</li>
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
@@ -175,7 +175,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player attempts to connect to the server</li>
+<li>Called when the player attempts to connect to the server</li>
 <li>No return behavior</li>
 </ul>
 
@@ -253,14 +253,14 @@
 </ul>
 
 <h2 id="onplayerbanned">OnPlayerBanned</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerBanned</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">address</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerBanned</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">address</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerBanned works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when a player is banned (Facepunch, EAC, server ban, etc.)</li>
+<li>Called when the player is banned (Facepunch, EAC, server ban, etc.)</li>
 <li>No return behavior</li>
 </ul>
 
@@ -297,7 +297,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player is about to die</li>
+<li>Called when the player is about to die</li>
 <li>HitInfo may be null</li>
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
@@ -322,7 +322,7 @@
 </code></pre>
 
 <ul>
-<li>Called just before a player&rsquo;s health changes</li>
+<li>Called just before the player&rsquo;s health changes</li>
 <li>Returning a non-null value cancels the health change</li>
 </ul>
 
@@ -350,6 +350,18 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="onplayerkicked">OnPlayerKicked</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerKicked</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerKicked works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called after the player is kicked from the server</li>
+<li>No return behavior</li>
+</ul>
+
 <h2 id="onplayerland">OnPlayerLand</h2>
 <pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerLand</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">float</span> <span class="n">num</span><span class="p">)</span>
 <span class="p">{</span>
@@ -358,7 +370,7 @@
 </code></pre>
 
 <ul>
-<li>Called just before a player lands on the ground</li>
+<li>Called just before the player lands on the ground</li>
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
@@ -382,7 +394,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player stops looting</li>
+<li>Called when the player stops looting</li>
 <li>No return behavior</li>
 </ul>
 
@@ -394,7 +406,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player is about to recover from the &lsquo;wounded&rsquo; state</li>
+<li>Called when the player is about to recover from the &lsquo;wounded&rsquo; state</li>
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
@@ -420,7 +432,7 @@
 <ul>
 <li>Called when the player has respawned (specifically when they click the &ldquo;Respawn&rdquo; button)</li>
 <li>ONLY called after the player has transitioned from dead to not-dead, so not when they&rsquo;re waking up</li>
-<li>This means it&rsquo;s possible for a player to connect and disconnect from a server without OnPlayerRespawned ever triggering for them</li>
+<li>This means it&rsquo;s possible for the player to connect and disconnect from a server without OnPlayerRespawned ever triggering for them</li>
 <li>No return behavior</li>
 </ul>
 
@@ -432,7 +444,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player is about to go to sleep</li>
+<li>Called when the player is about to go to sleep</li>
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
@@ -456,7 +468,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player spawns for the first time on the server</li>
+<li>Called when the player spawns for the first time on the server</li>
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
@@ -468,7 +480,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player starts spectating</li>
+<li>Called when the player starts spectating</li>
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
@@ -480,7 +492,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player stops spectating</li>
+<li>Called when the player stops spectating</li>
 <li>Returning a non-null value stops the spectate from ending</li>
 </ul>
 
@@ -495,6 +507,18 @@
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
+<h2 id="onplayerunbanned">OnPlayerUnbanned</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerUnbanned</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">address</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerUnbanned works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player is unbanned (server ban only)</li>
+<li>No return behavior</li>
+</ul>
+
 <h2 id="onplayerviolation">OnPlayerViolation</h2>
 <pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">OnPlayerViolation</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">AntiHackType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">float</span> <span class="n">amount</span><span class="p">)</span>
 <span class="p">{</span>
@@ -503,7 +527,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player triggers an anti-hack violation</li>
+<li>Called when the player triggers an anti-hack violation</li>
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
@@ -515,7 +539,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player is about to go down to the &#39;wounded&rsquo; state</li>
+<li>Called when the player is about to go down to the &#39;wounded&rsquo; state</li>
 <li>Returning a non-null value cancels the wounded state</li>
 </ul>
 
