@@ -2129,18 +2129,6 @@
 
           <h1 id="vending-machine-hooks">Vending Machine Hooks</h1>
 
-<h2 id="canvendingacceptitem">CanVendingAcceptItem</h2>
-<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanVendingAcceptItem</span><span class="p">(</span><span class="n">VendingMachine</span> <span class="n">vending</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanVendingAcceptItem works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when a player attempts to administer a vending machine</li>
-<li>Returning true or false overrides default behavior</li>
-</ul>
-
 <h2 id="canadministervending">CanAdministerVending</h2>
 <pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanAdministerVending</span><span class="p">(</span><span class="n">VendingMachine</span> <span class="n">machine</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
@@ -2162,6 +2150,18 @@
 
 <ul>
 <li>Called when a player attempts to use a vending machine</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="canvendingacceptitem">CanVendingAcceptItem</h2>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanVendingAcceptItem</span><span class="p">(</span><span class="n">VendingMachine</span> <span class="n">vending</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanVendingAcceptItem works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player attempts to administer a vending machine</li>
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
