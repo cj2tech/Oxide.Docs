@@ -1644,7 +1644,7 @@
           <h1 id="sign-hooks">Sign Hooks</h1>
 
 <h2 id="canupdatesign">CanUpdateSign</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUpdateSign</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">Signage</span> <span class="n">sign</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanUpdateSign</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">Signage</span> <span class="n">sign</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUpdateSign works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1652,7 +1652,7 @@
 
 <ul>
 <li>Called when the player attempts to change the text on a sign or lock it</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="onsignlocked">OnSignLocked</h2>
@@ -1676,6 +1676,18 @@
 
 <ul>
 <li>Called after the player has changed the text on a sign</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onspinwheel">OnSpinWheel</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnSpinWheel</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">SpinnerWheel</span> <span class="n">wheel</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnSpinWheel works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player spins a spinner wheel</li>
 <li>No return behavior</li>
 </ul>
 
