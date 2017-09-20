@@ -1197,9 +1197,9 @@
 </code></pre>
 
 <ul>
-<li>Alternatively, modify the hitInfo object to change the damage</li>
+<li>Alternatively, modify the HitInfo object to change the damage</li>
 <li>It should be okay to set the damage to 0, but if you don&rsquo;t return non-null, the player&rsquo;s client will receive a damage indicator (if entity is a BasePlayer)</li>
-<li>hitInfo has all kinds of useful things in it, such as hitInfo.Weapon, hitInfo.damageAmount or hitInfo.damageType</li>
+<li>HitInfo has all kinds of useful things in it, such as Weapon, damageProperties or damageTypes</li>
 <li>Returning true overrides default behavior (useful for godmode etc.)</li>
 </ul>
 
