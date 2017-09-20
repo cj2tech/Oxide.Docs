@@ -51,84 +51,93 @@
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnUserApprove works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Returning</span> <span class="k">true</span> <span class="n">overrides</span> <span class="k">default</span> <span class="n">behavior</span><span class="p">,</span> <span class="n">plugin</span> <span class="n">should</span> <span class="n">call</span> <span class="n">approval</span><span class="p">.</span><span class="n">Deny</span> <span class="k">if</span> <span class="n">it</span> <span class="n">does</span> <span class="k">this</span>
+<ul>
+<li>Returning true overrides default behavior, plugin should call approval.Deny if it does this</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerConnected</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">Player</span> <span class="n">player</span><span class="p">)</span>
+<h2 id="onplayerconnected">OnPlayerConnected</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">Player</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerConnected works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">No</span> <span class="k">return</span> <span class="n">behavior</span>
- <span class="p">*</span> <span class="n">Called</span> <span class="n">before</span> <span class="n">the</span> <span class="n">player</span> <span class="kt">object</span> <span class="k">is</span> <span class="n">created</span><span class="p">,</span> <span class="n">but</span> <span class="n">after</span> <span class="n">the</span> <span class="n">player</span> <span class="n">has</span> <span class="n">been</span> <span class="n">approved</span>
+<ul>
+<li>No return behavior</li>
+<li>Called before the player object is created, but after the player has been approved</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerDisconnected</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerDisconnected</span><span class="p">(</span><span class="n">Player</span> <span class="n">player</span><span class="p">)</span>
+<h2 id="onplayerdisconnected">OnPlayerDisconnected</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerDisconnected</span><span class="p">(</span><span class="n">Player</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerDisconnected works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">No</span> <span class="k">return</span> <span class="n">behavior</span>
- <span class="p">*</span> <span class="n">Called</span> <span class="n">after</span> <span class="n">the</span> <span class="n">player</span> <span class="n">has</span> <span class="n">disconnected</span> <span class="n">from</span> <span class="n">the</span> <span class="n">server</span>
+<ul>
+<li>No return behavior</li>
+<li>Called after the player has disconnected from the server</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerSpawn</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">PlayerFirstSpawnEvent</span> <span class="n">e</span><span class="p">)</span>
+<h2 id="onplayerspawn">OnPlayerSpawn</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">PlayerFirstSpawnEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSpawn works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">No</span> <span class="k">return</span> <span class="n">behavior</span>
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">spawns</span>
+<ul>
+<li>No return behavior</li>
+<li>Called when the player spawns</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerRespawn</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerRespawn</span><span class="p">(</span><span class="n">PlayerRespawnEvent</span> <span class="n">e</span><span class="p">)</span>
+<h2 id="onplayerrespawn">OnPlayerRespawn</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerRespawn</span><span class="p">(</span><span class="n">PlayerRespawnEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerRespawn works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">No</span> <span class="k">return</span> <span class="n">behavior</span>
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">respawns</span>
+<ul>
+<li>No return behavior</li>
+<li>Called when the player respawns</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerChat</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">PlayerEvent</span> <span class="n">e</span><span class="p">)</span>
+<h2 id="onplayerchat">OnPlayerChat</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">PlayerEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerChat works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">sends</span> <span class="n">chat</span> <span class="n">to</span> <span class="n">the</span> <span class="n">server</span>
- <span class="p">*</span> <span class="n">Returning</span> <span class="k">true</span> <span class="n">overrides</span> <span class="k">default</span> <span class="n">behavior</span> <span class="n">of</span> <span class="n">chat</span><span class="p">,</span> <span class="n">not</span> <span class="n">commands</span>
+<ul>
+<li>Called when the player sends chat to the server</li>
+<li>Returning true overrides default behavior of chat, not commands</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerCapture</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerCapture</span><span class="p">(</span><span class="n">PlayerCaptureEvent</span> <span class="n">e</span><span class="p">)</span>
+<h2 id="onplayercapture">OnPlayerCapture</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerCapture</span><span class="p">(</span><span class="n">PlayerCaptureEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerCapture works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">once</span> <span class="n">the</span> <span class="n">loading</span> <span class="n">bar</span> <span class="n">of</span> <span class="n">roping</span> <span class="n">a</span> <span class="n">player</span> <span class="k">is</span> <span class="n">completed</span><span class="p">.</span>
+<ul>
+<li>Called once the loading bar of roping a player is completed.</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerRelease</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerRelease</span><span class="p">(</span><span class="n">PlayerEscapeEvent</span> <span class="n">e</span><span class="p">)</span>
+<h2 id="onplayerrelease">OnPlayerRelease</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerRelease</span><span class="p">(</span><span class="n">PlayerEscapeEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerRelease works!"</span><span class="p">);</span>
 <span class="p">}</span>
-
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">a</span> <span class="n">roped</span> <span class="n">player</span> <span class="n">gets</span> <span class="n">freed</span> <span class="n">from</span> <span class="n">the</span> <span class="n">rope</span><span class="p">.</span>
 </code></pre>
+
+<ul>
+<li>Called when a roped player gets freed from the rope.</li>
+</ul>
 
       </div>
       <div class="dark-box">
