@@ -167,15 +167,15 @@
 <li>Returning true or false overrides default behavior</li>
 </ul>
 
-<h2 id="onconnectionauth">OnConnectionAuth</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnConnectionAuth</span><span class="p">(</span><span class="n">Message</span><span class="p">.</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span>
+<h2 id="onclientauth">OnClientAuth</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnClientAuth</span><span class="p">(</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnConnectionAuth works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnClientAuth works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when the player attempts to connect to the server</li>
+<li>Called when the player is giving server connection authorization information</li>
 <li>No return behavior</li>
 </ul>
 
