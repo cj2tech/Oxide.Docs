@@ -1386,7 +1386,7 @@
           <h1 id="item-hooks">Item Hooks</h1>
 
 <h2 id="canacceptitem">CanAcceptItem</h2>
-<pre class="highlight csharp"><code><span class="k">enum</span> <span class="nf">CanAcceptItem</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="n">ItemContainer</span><span class="p">.</span><span class="n">CanAcceptResult</span> <span class="nf">CanAcceptItem</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanAcceptItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1410,7 +1410,7 @@
 </ul>
 
 <h2 id="canmoveitem">CanMoveItem</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanMoveItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">PlayerInventory</span> <span class="n">playerLoot</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">targetContainer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">targetSlot</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">object</span> <span class="nf">CanMoveItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">PlayerInventory</span> <span class="n">playerLoot</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">targetContainer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">targetSlot</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanMoveItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1466,7 +1466,7 @@
 
 <ul>
 <li>Called when looking for fuel for the oven</li>
-<li>Returning an item overrides default behavior</li>
+<li>Returning an Item overrides default behavior</li>
 </ul>
 
 <h2 id="onitemaction">OnItemAction</h2>
@@ -1637,7 +1637,7 @@
 
 <ul>
 <li>Called right before an item is split into multiple stacks</li>
-<li>Returning an item overrides default behavior</li>
+<li>Returning an Item overrides default behavior</li>
 </ul>
 
 <h2 id="onitemupgrade">OnItemUpgrade</h2>
@@ -1971,7 +1971,7 @@
 </ul>
 
 <h2 id="canpickuplock">CanPickupLock</h2>
-<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanPickupLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="k">lock</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="kt">bool</span> <span class="nf">CanPickupLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanPickupLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
