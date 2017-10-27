@@ -66,7 +66,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a new savefile is created</li>
+<li>Called when a new savefile is created (usually when map has wiped)</li>
 <li>No return behavior</li>
 </ul>
 
@@ -139,6 +139,7 @@
 
 <ul>
 <li>Called every tick (defined by the tick rate of the server)</li>
+<li>For better performance, avoid using heavy calculations in this hook.</li>
 <li>No return behavior</li>
 </ul>
 
