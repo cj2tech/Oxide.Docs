@@ -57,6 +57,29 @@
 <li>Returning true overrides default behavior, plugin should call approval.Deny if it does this</li>
 </ul>
 
+<h2 id="onplayercapture">OnPlayerCapture</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerCapture</span><span class="p">(</span><span class="n">PlayerCaptureEvent</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerCapture works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called once the loading bar of roping a player is completed.</li>
+</ul>
+
+<h2 id="onplayerchat">OnPlayerChat</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">PlayerEvent</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerChat works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player sends chat to the server</li>
+<li>Returning true overrides default behavior of chat, not commands</li>
+</ul>
+
 <h2 id="onplayerconnected">OnPlayerConnected</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">Player</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
@@ -81,16 +104,34 @@
 <li>Called after the player has disconnected from the server</li>
 </ul>
 
-<h2 id="onplayerspawn">OnPlayerSpawn</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">PlayerFirstSpawnEvent</span> <span class="n">e</span><span class="p">)</span>
+<h2 id="onplayerescape">OnPlayerEscape</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerEscape</span><span class="p">(</span><span class="n">PlayerEscapeEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSpawn works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerEscape works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<h2 id="onplayerinteract">OnPlayerInteract</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerInteract</span><span class="p">(</span><span class="n">InteractEvent</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerInteract works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>No return behavior</li>
-<li>Called when the player spawns</li>
+<li>Called when a player interacts with an object, like a crafting station, loot, chests, or anything with an inventory.</li>
+</ul>
+
+<h2 id="onplayerrelease">OnPlayerRelease</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerRelease</span><span class="p">(</span><span class="n">PlayerEscapeEvent</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerRelease works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a roped player gets freed from the rope.</li>
+<li>Called when a roped player escapes.</li>
 </ul>
 
 <h2 id="onplayerrespawn">OnPlayerRespawn</h2>
@@ -105,38 +146,38 @@
 <li>Called when the player respawns</li>
 </ul>
 
-<h2 id="onplayerchat">OnPlayerChat</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">PlayerEvent</span> <span class="n">e</span><span class="p">)</span>
+<p>## OnPlayerSleep</p>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSleep</span><span class="p">(</span><span class="n">PlayerSleepEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerChat works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSleep works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when the player sends chat to the server</li>
-<li>Returning true overrides default behavior of chat, not commands</li>
+<li>Called when a player sleeps (logout).</li>
 </ul>
 
-<h2 id="onplayercapture">OnPlayerCapture</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerCapture</span><span class="p">(</span><span class="n">PlayerCaptureEvent</span> <span class="n">e</span><span class="p">)</span>
+<h2 id="onplayerspawn">OnPlayerSpawn</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">PlayerFirstSpawnEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerCapture works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSpawn works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called once the loading bar of roping a player is completed.</li>
+<li>No return behavior</li>
+<li>Called when the player spawns</li>
 </ul>
 
-<h2 id="onplayerrelease">OnPlayerRelease</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerRelease</span><span class="p">(</span><span class="n">PlayerEscapeEvent</span> <span class="n">e</span><span class="p">)</span>
+<h2 id="onplayerunlock">OnPlayerUnlock</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerUnlock</span><span class="p">(</span><span class="n">ObjectUnlockEvent</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerRelease works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerUnlock works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when a roped player gets freed from the rope.</li>
+<li>Called when a player unlocks a door or cage with a lockpick.</li>
 </ul>
 
       </div>
